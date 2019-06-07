@@ -1,0 +1,82 @@
+<br>
+<h1>{{team}}</h1>
+<br>
+<h3 id='notprev'>Past Games</h3>
+<div class="game" *ngFor="let pgame of pastgames">
+  <div *ngIf="(team == pgame.ateam || team == pgame.hteam) && DateGreater(pgame.date , pgame.tz) == 3">
+    <div class="row bar">
+      <div class="col-3">
+        <img src="https://squiggle.com.au/wp-content/themes/squiggle/assets/images/{{comm.correctImage(pgame.hteam)}}" class="img-fluid">
+        <br>
+        {{pgame.hteam}}
+      </div>
+      <div class="col-6 ban">
+          <div class="score">{{pgame.ascore}}</div> V <div class="score">{{pgame.hscore}}</div>
+      </div>
+      <div class="col-3">
+        <img src="https://squiggle.com.au/wp-content/themes/squiggle/assets/images/{{comm.correctImage(pgame.ateam)}}" class="img-fluid">
+        <br>
+        {{pgame.ateam}}
+      </div>
+      <div class="row gamebar">
+        <div class="col-12 date">
+          <div class="betblock">
+            {{pgame.date}}
+            <div *ngIf="team == pgame.ateam; else elseBlock" class="betblock">
+              <span class="badge badge-primary">Home</span>
+            </div>
+            <ng-template #elseBlock>
+              <span class="badge badge-primary">Away</span>
+            </ng-template>
+            &nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="previous topbar" (click)="getPastGame()" id="prev">
+  <br>
+  <i class="fas fa-chevron-up">
+  </i> Show Previous Games
+</div>
+  <br>
+  <h3>Upcomming Games</h3>
+  <div class="game" *ngFor="let game of futureGames">
+    <div *ngIf="(team == game.ateam || team == game.hteam) && DateGreater(game.date , game.tz) <= 2">
+
+      <div class="row bar">
+        <div class="col-3">
+          <img src="https://squiggle.com.au/wp-content/themes/squiggle/assets/images/{{comm.correctImage(game.hteam)}}" class="img-fluid">
+          <br>
+          {{game.hteam}}
+        </div>
+        <div class="col-6 ban">
+        V
+        </div>
+        <div class="col-3">
+          <img src="https://squiggle.com.au/wp-content/themes/squiggle/assets/images/{{comm.correctImage(game.ateam)}}" class="img-fluid">
+          <br>
+          {{game.ateam}}
+        </div>
+        <div class="row">
+          <div class="col-12 date">
+            <div class="betblock">
+              {{game.date}}
+              <div *ngIf="team == game.ateam; else elseBlock" class="betblock">
+                <span class="badge badge-primary">Home</span>
+              </div>
+              <ng-template #elseBlock>
+                <span class="badge badge-primary">Away</span>
+              </ng-template>
+              &nbsp;
+              <p>{{ game.tip }} by {{ game.margin }}</p>
+              <div *ngIf="DateGreater(game.date , game.tz) == 1" class="betting-button">
+              <a href="{{comm.getBettingLink(game.ateam,game.hteam)}}" class="btn btn-danger">Place Bet</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

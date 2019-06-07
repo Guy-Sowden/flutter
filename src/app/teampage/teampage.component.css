@@ -1,0 +1,54 @@
+.previous{
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  background-color: blue;
+  vertical-align: middle;
+  color: white;
+  margin: 0px;
+  font-weight: bold;
+}
+.bar{
+  padding: 5px;
+}
+.topbar{
+  text-size: 30px;
+  border-top: 1px solid grey;
+}
+.ban{
+  text-align: center;
+  font-size: 40px;
+}
+.col-3{
+  text-align: center;
+}
+.row{
+  width: 100%;
+}
+.date{
+  display: inline;
+  text-align: right;
+}
+.pastgame{
+  display: none;
+}
+.betblock{
+  text-align: right;
+  display: inline;
+}
+.bar{
+  border-radius: 5px;
+  border: solid;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-width: 5px;
+  border-color: black;
+}
+#notprev{
+  display: none;
+}
+.score{
+  color:grey;
+  display: inline;
+}

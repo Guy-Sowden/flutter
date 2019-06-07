@@ -1,0 +1,26 @@
+export class Game {
+
+constructor(
+public hteamid	:number ,
+public round	:number ,
+public complete	:number ,
+public winnerteamid	:number ,
+public is_final	:number ,
+public year	:number ,
+public date	:string,
+public hbehinds	:number ,
+public ateamid	:number ,
+public tz	:string,
+public winner	:string,
+public ascore	:number ,
+public is_grand_final	:number ,
+public abehinds	:number,
+public hgoals	:number,
+public updated	:string,
+public venue	:string,
+public hscore	:number,
+public ateam	:number,
+public id	:number,
+public agoals	:number,
+public hteam	:string ,       
+){} }

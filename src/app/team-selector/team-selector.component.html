@@ -1,0 +1,17 @@
+
+<div class="container">
+  <app-currentgames></app-currentgames>
+  <br>
+  <h4>All Teams</h4>
+<div class="teamBlock">
+    <div class="row" id="teamgrid">
+      <div *ngFor="let comment of comm">
+        <div class="col-lg-10 col-md-5 col-sm-10 blk" routerLink="/dashboard/{{comment.name}}">
+            <img src="https://squiggle.com.au{{comment.logo}}" class="img-fluid"/>
+            <br>
+            <p>{{comment.name}}</p>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

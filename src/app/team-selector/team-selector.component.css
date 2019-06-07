@@ -1,0 +1,15 @@
+.blk{
+  margin-left: 10px;
+  padding: 3px;
+  text-align: center;
+  border-radius: 5px;
+  border: 5px;
+  border-style: solid;
+  border-color:white;
+}
+.blk:hover{
+    border-color: black;
+}
+img {
+    padding-bottom: 3px;
+}
